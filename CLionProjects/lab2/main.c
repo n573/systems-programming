@@ -5,24 +5,23 @@
 
 //Nathan Cauwet
 
-typedef struct str {//given
-    char letters[30];
-} string;
-
-typedef struct hist {//given
-    string word;
+typedef struct freq {
     int freq;
-} histogramEntry;
+    char* word;
+} Histogram;
+//typedef struct hist {//given
+//    string word;
+//    int freq;
+//} histogramEntry;
 
-string *readWords(int *num) {//works
+/*string *readWords(int *num) {
     string *a = malloc(20 * sizeof(string));
     bool done = false;
     int i = 0;//count
     while (!done) {
-        //printf("Enter word %d: ", i);
         string in;
         scanf("%s", in.letters);
-        if (strcmp(in.letters, "\0") != 0) {//if done is not the input
+        if (strcmp(in.letters, (const char *) EOF) != 0) {//if \0 is not the input
             strcpy(a[i].letters, in.letters);//copy the value to the array
             i++;//increment count
         } else {
@@ -31,17 +30,34 @@ string *readWords(int *num) {//works
     }
     *num = i;//number of words
     return a;//array of words
-}
+}*/
 
-void displayWords(string *a, int num) {//works
-    printf("Words:\n");
-    for (int i = 0; i < num; i++) {
-        printf("%d: %s\n", i, a[i].letters);
+Histogram* readWords() {
+    char* in = malloc(sizeof(char*));
+    bool done = false;
+    Histogram *hist;
+    while(!done) {
+        scanf("%s", in);
+        if(strcmp(in,"\0")==0) {
+            done = true;
+        }
+        hist->word = in;
+        printf("%s", hist->word);
     }
+
+    return hist;
+
 }
 
-histogramEntry *makeHistogram(string *a, int num, int *num2) {
-    histogramEntry *h = malloc(num * sizeof(histogramEntry));//holds the # of numWords of histogramEntry sized spaces
+void displayWords(char *a, int num) {//works
+//    printf("Words:\n");
+//    for (int i = 0; i < num; i++) {
+//        printf("%d: %s\n", i, a[i].letters);
+//    }
+}
+
+/*Histogram *makeHistogram( *a, int num, int *num2) {
+    Histogram *h = malloc(num * sizeof(Histogram));//holds the # of numWords of histogramEntry sized spaces
     int n = 0;//count
     for (int i = 0; i < num; i++) {
         bool done = false;//if done is true then a repeat word has been found
@@ -64,44 +80,52 @@ histogramEntry *makeHistogram(string *a, int num, int *num2) {
     return h;
 }//works
 
-void displayHistogram(histogramEntry *h, int num) {//works
+void displayHistogram(Histogram *h, int num) {//works
     printf("Histogram:\n");
     for (int i = 0; i < num; i++) {
         printf("%d: %s with freq of %d\n", i, h[i].word.letters, h[i].freq);
 
     }
 }
+*/
 
-histogramEntry *sortHistogram(histogramEntry *h, int num) {
-    for (int i = 0; i < num; i++) {
-        for (int j = 0; j < num; j++) {
-            if (h[i].freq > h[j].freq) {
-                int temp = h[j].freq;//store freq
-                h[j].freq = h[i].freq;//switch for new freq
-                h[i].freq = temp;//replace with stored freq
-                string word = h[j].word;//store word
-                h[j].word = h[i].word;//switch for new word
-                h[i].word = word;//replace with stored word
-            }
-        }
-    }
-    return h;
-}//works
+//Histogram *sortHistogram(Histogram *h, int num) {
+//    for (int i = 0; i < num; i++) {
+//        for (int j = 0; j < num; j++) {
+//            if (h[i].freq > h[j].freq) {
+//                int temp = h[j].freq;//store freq
+//                h[j].freq = h[i].freq;//switch for new freq
+//                h[i].freq = temp;//replace with stored freq
+//                string word = h[j].word;//store word
+//                h[j].word = h[i].word;//switch for new word
+//                h[i].word = word;//replace with stored word
+//            }
+//        }
+//    }
+//    return h;
+//}//works
 
 int main() {
-    string *words;
-    int numWords;
 
-    words = readWords(&numWords);//make words array
-    displayWords(words, numWords);
+    Histogram h;
+    readWords(&h);
 
-    int numHist;//reduced total
-    histogramEntry *histogram;
+//    histogram.word
 
-    histogram = makeHistogram(words, numWords, &numHist);//make histogram array, returns numHist as a pointer
-    displayHistogram(histogram, numHist);
-    histogram = sortHistogram(histogram, numHist);//sorts in descending order
-    displayHistogram(histogram, numHist);
+//    string *words;
+//    int numWords;
+//
+//    readString(words);
+//    //words = readWords(&numWords);//make words array
+//    displayWords(words, numWords);
+//
+//    int numHist;//reduced total
+//    histogramEntry *histogram;
+//
+//    histogram = makeHistogram(words, numWords, &numHist);//make histogram array, returns numHist as a pointer
+//    displayHistogram(histogram, numHist);
+//    histogram = sortHistogram(histogram, numHist);//sorts in descending order
+//    displayHistogram(histogram, numHist);
 
     return 0;
 }

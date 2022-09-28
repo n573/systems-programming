@@ -49,8 +49,8 @@ cmake_ninja_workdir = /home/n573/systems-programming/CLionProjects/lab2/cmake-bu
 
 build cmake_object_order_depends_target_lab2: phony || CMakeFiles/lab2.dir
 
-build CMakeFiles/lab2.dir/main.c.o: C_COMPILER__lab2_Debug /home/n573/systems-programming/CLionProjects/lab2/main.c || cmake_object_order_depends_target_lab2
-  DEP_FILE = CMakeFiles/lab2.dir/main.c.o.d
+build CMakeFiles/lab2.dir/test.c.o: C_COMPILER__lab2_Debug /home/n573/systems-programming/CLionProjects/lab2/test.c || cmake_object_order_depends_target_lab2
+  DEP_FILE = CMakeFiles/lab2.dir/test.c.o.d
   FLAGS = -g -std=gnu99
   OBJECT_DIR = CMakeFiles/lab2.dir
   OBJECT_FILE_DIR = CMakeFiles/lab2.dir
@@ -63,7 +63,7 @@ build CMakeFiles/lab2.dir/main.c.o: C_COMPILER__lab2_Debug /home/n573/systems-pr
 #############################################
 # Link the executable lab2
 
-build lab2: C_EXECUTABLE_LINKER__lab2_Debug CMakeFiles/lab2.dir/main.c.o
+build lab2: C_EXECUTABLE_LINKER__lab2_Debug CMakeFiles/lab2.dir/test.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/lab2.dir
   POST_BUILD = :
