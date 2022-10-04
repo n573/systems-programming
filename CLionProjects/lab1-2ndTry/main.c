@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 void readScores(int* scores, int arrLen) {
+<<<<<<< HEAD
     // int in; 
     // while(in != EOF) {
     //     scanf('%d', &in);
@@ -8,6 +9,11 @@ void readScores(int* scores, int arrLen) {
     while(scores[arrLen] != EOF) {
         scanf("%d", &scores[arrLen]);
         arrLen++;
+=======
+    int in; 
+    while(in != EOF) {
+        scanf('%d', &in);
+>>>>>>> e0b99a6e6293c678eb5ae4c3228bbda07bfac915
     }
     
 
@@ -34,8 +40,11 @@ int main() {
     int scoreList[100];
     int numScore;
 
+<<<<<<< HEAD
     readScores(scoreList, numScore);
     
+=======
+>>>>>>> e0b99a6e6293c678eb5ae4c3228bbda07bfac915
 
 
     // printf("Hello, World!\n");
