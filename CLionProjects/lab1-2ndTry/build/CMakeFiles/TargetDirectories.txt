@@ -1,0 +1,3 @@
+/home/n573/systems-programming/CLionProjects/lab1-2ndTry/build/CMakeFiles/lab1.dir
+/home/n573/systems-programming/CLionProjects/lab1-2ndTry/build/CMakeFiles/edit_cache.dir
+/home/n573/systems-programming/CLionProjects/lab1-2ndTry/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/n573/systems-programming/CLionProjects/lab1-2ndTry/build",
+  "command": "/usr/bin/gcc   -g -std=gnu99 -o CMakeFiles/lab1.dir/main.c.o -c /home/n573/systems-programming/CLionProjects/lab1-2ndTry/main.c",
+  "file": "/home/n573/systems-programming/CLionProjects/lab1-2ndTry/main.c"
+}
+]
